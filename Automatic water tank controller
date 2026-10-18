@@ -1,0 +1,14 @@
+int lowSensor = 2, highSensor = 3, pump = 8;
+
+void setup() {
+  pinMode(lowSensor, INPUT_PULLUP);
+  pinMode(highSensor, INPUT_PULLUP);
+  pinMode(pump, OUTPUT);
+}
+
+void loop() {
+  if (digitalRead(highSensor) == LOW)
+    digitalWrite(pump, LOW);
+  else if (digitalRead(lowSensor) == LOW)
+    digitalWrite(pump, HIGH);
+}
